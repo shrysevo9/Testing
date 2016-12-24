@@ -8,9 +8,15 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--For pie chart -->
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <!--For pie chart -->
   <script type="text/javascript" src="JS/script.js"></script>
+  <!--For maps chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <!--For maps chart -->
 </head>
 <body>
 
@@ -41,6 +47,27 @@
 <div class="container-fluid">
 <!--Voters and Population sections-->
   <div class="row">
+<!--Maps section .....................................-->
+<div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Constituency
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><div class="checkbox"><label><input type="checkbox" value="Male">Men</label></div></li>
+              <li role="separator" class="divider"></li>
+              <li><div class="checkbox"><label><input type="checkbox" value="Female">Women</label></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div id="map_div" style="height: 500px; width: 900px"></div>
+        </div>
+      </div>
+    </div>
 <!--Voters...................-->
     <div class="col-sm-6">
       <div class="panel panel-default">
@@ -84,7 +111,7 @@
       </div>
     </div>
 <!--MLA History-->
-        <div class="col-sm-12">
+    <div class="col-sm-12">
       <div class="panel panel-default">
         <div class="panel-heading">
           MLA History
@@ -105,6 +132,16 @@
       </div>
     </div>
   </div>
+  <table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                <thead>
+                <tr>
+                    <th data-field="state" data-checkbox="true" >Item ID</th>
+                    <th data-field="id" data-sortable="true">Item ID</th>
+                    <th data-field="name"  data-sortable="true">Item Name</th>
+                    <th data-field="price" data-sortable="true">Item Price</th>
+                </tr>
+                </thead>
+            </table>
 </div>
 
 </body>
